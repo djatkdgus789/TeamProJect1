@@ -5,4 +5,6 @@
     <string name="button1">Button1</string>
     <string name="button2">Button2</string>
     <string name="folder">Folder</string>
+    <string name="Setting">설정</string>
+    <string name="Exit">종료</string>
 </resources>

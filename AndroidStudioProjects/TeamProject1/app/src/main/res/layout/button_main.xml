@@ -31,6 +31,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
+                android:onClick="CameraClick"
                 android:padding="0dp"
                 android:text="@string/camera"
                 tools:layout_editor_absoluteX="16dp"
@@ -42,6 +43,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
+                android:onClick="FolderClick"
                 android:padding="0dp"
                 android:text="@string/folder"
                 tools:layout_editor_absoluteX="205dp"
@@ -53,21 +55,23 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/link2"
+                android:id="@+id/button1"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
+                android:onClick="Button1Click"
                 android:text="@string/button1"
                 tools:layout_editor_absoluteX="205dp"
                 tools:layout_editor_absoluteY="48dp" />
 
             <Button
-                android:id="@+id/link1"
+                android:id="@+id/button2"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
+                android:onClick="Button2Click"
                 android:text="@string/button2"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="48dp" />
