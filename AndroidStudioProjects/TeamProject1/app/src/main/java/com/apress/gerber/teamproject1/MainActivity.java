@@ -1,23 +1,26 @@
 package com.apress.gerber.teamproject1;
 
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+
 import android.provider.MediaStore;
-import android.support.v7.app.AlertDialog;
+
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+
+import android.view.textclassifier.TextLinks;
 import android.widget.Toast;
 
+
+
 public class MainActivity extends AppCompatActivity{
-    TextView textView;
+
+    public static final int REQUEST_CODE_MENU = 101;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +69,8 @@ public class MainActivity extends AppCompatActivity{
 //        Intent iCamera =  new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA);
 //        Toast.makeText(getApplicationContext(), "사진을 찍어주세요.", Toast.LENGTH_LONG).show();
 //        startActivityForResult(iCamera, 0);
-        Intent iCamera =  new Intent(getApplicationContext(), CameraActivity.class);
-        startActivity(iCamera);
+        Intent intent = new Intent(getApplicationContext(), CameraActivity.class) ;
+        startActivityForResult(intent, REQUEST_CODE_MENU);
     }
 
     public void FolderClick(View v){

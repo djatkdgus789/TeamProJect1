@@ -7,4 +7,6 @@
     <string name="folder">Folder</string>
     <string name="Setting">설정</string>
     <string name="Exit">종료</string>
+    <string name="todo">TODO</string>
+    <string name="TakePhoto">사진찍기</string>
 </resources>
