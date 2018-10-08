@@ -67,9 +67,9 @@ public class MainActivity extends AppCompatActivity{
 
     public void CameraClick(View v) {
 //        Intent iCamera =  new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA);
-//        Toast.makeText(getApplicationContext(), "사진을 찍어주세요.", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "사진을 찍어주세요.", Toast.LENGTH_LONG).show();
 //        startActivityForResult(iCamera, 0);
-        Intent intent = new Intent(getApplicationContext(), CameraActivity.class) ;
+        Intent intent = new Intent(this, CameraActivity.class) ;
         startActivityForResult(intent, REQUEST_CODE_MENU);
     }
 

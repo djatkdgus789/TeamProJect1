@@ -18,5 +18,5 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:onClick="onButton1Clicked"
-        android:text="@string/TakePhoto"/>
+    android:text="@string/TakePhoto"/>
 </RelativeLayout>
