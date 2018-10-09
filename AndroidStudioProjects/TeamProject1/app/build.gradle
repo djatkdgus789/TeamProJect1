@@ -4,8 +4,8 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.apress.gerber.teamproject1"
-        minSdkVersion 24
-        targetSdkVersion 28
+        minSdkVersion 20
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
