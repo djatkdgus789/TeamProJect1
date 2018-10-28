@@ -4,7 +4,11 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.apress.gerber.teamproject1"
+<<<<<<< HEAD
         minSdkVersion 20
+=======
+        minSdkVersion 24
+>>>>>>> parent of 3677278... Android
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
