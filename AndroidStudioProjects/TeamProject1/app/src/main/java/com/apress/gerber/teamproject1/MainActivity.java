@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity{
         Intent iButton2  = new Intent(Intent.ACTION_VIEW, Uri.parse("http://google.com"));
         startActivity(iButton2);
     }
+<<<<<<< HEAD
 
 //    public void ExitClick(View v){
 //        AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -138,4 +139,6 @@ public class MainActivity extends AppCompatActivity{
 //            }
 //        }
 //    }
+=======
+>>>>>>> parent of 0ba5739... ??
 }
