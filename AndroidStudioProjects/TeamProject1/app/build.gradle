@@ -5,6 +5,7 @@ android {
     defaultConfig {
         applicationId "com.apress.gerber.teamproject1"
 <<<<<<< HEAD
+<<<<<<< HEAD
         minSdkVersion 20
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -18,6 +19,10 @@ android {
 =======
         targetSdkVersion 22
 >>>>>>> parent of 0ba5739... ??
+=======
+        minSdkVersion 24
+        targetSdkVersion 28
+>>>>>>> parent of 3677278... Android
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

@@ -3,6 +3,7 @@ package com.apress.gerber.teamproject1;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -19,6 +20,11 @@ import android.net.Uri;
 >>>>>>> parent of 0ba5739... ??
 =======
 import java.io.File;
+=======
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+>>>>>>> parent of 3677278... Android
 import android.net.Uri;
 >>>>>>> parent of 0ba5739... ??
 import android.os.Bundle;
@@ -26,6 +32,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 import android.widget.ImageView;
@@ -62,10 +69,27 @@ import java.io.IOException;
 public class CameraActivity extends AppCompatActivity {
     public static final int REQUEST_IMAGE_CAPTURE = 1001;
 
+=======
+import android.widget.ImageView;
+import android.widget.Toast;
+
+
+import java.io.File;
+import java.io.IOException;
+
+/**
+ * 인텐트를 이용해 단말의 카메라 앱을 실행시켜 사진을 찍는 방법을 알 수 있습니다.
+ *
+ */
+public class CameraActivity extends AppCompatActivity {
+    public static final int REQUEST_IMAGE_CAPTURE = 1001;
+
+>>>>>>> parent of 3677278... Android
     File file = null;
     ImageView imageView;
 
     @Override
+<<<<<<< HEAD
 <<<<<<< HEAD
     protected void onCreate(Bundle savedInstanceState){
 <<<<<<< HEAD
@@ -80,6 +104,9 @@ public class CameraActivity extends AppCompatActivity {
 >>>>>>> parent of 0ba5739... ??
 =======
 >>>>>>> parent of 0ba5739... ??
+=======
+    protected void onCreate(Bundle savedInstanceState) {
+>>>>>>> parent of 3677278... Android
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 

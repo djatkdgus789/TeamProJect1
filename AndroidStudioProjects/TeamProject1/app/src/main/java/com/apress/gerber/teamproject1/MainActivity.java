@@ -90,6 +90,9 @@ public class MainActivity extends AppCompatActivity{
         startActivity(iButton2);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 3677278... Android
 
 //    public void ExitClick(View v){
 //        AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -139,6 +142,9 @@ public class MainActivity extends AppCompatActivity{
 //            }
 //        }
 //    }
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 0ba5739... ??
+=======
+>>>>>>> parent of 3677278... Android
 }
