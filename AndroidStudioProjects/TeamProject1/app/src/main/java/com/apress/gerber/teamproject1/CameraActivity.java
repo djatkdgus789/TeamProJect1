@@ -1,6 +1,7 @@
 package com.apress.gerber.teamproject1;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,17 +12,30 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 >>>>>>> parent of 3677278... Android
+=======
+import java.io.File;
+import android.net.Uri;
+>>>>>>> parent of 0ba5739... ??
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+<<<<<<< HEAD
 import android.widget.ImageView;
 import android.widget.Toast;
 
 
 import java.io.File;
 <<<<<<< HEAD
+=======
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
+import android.widget.ImageView;
+>>>>>>> parent of 0ba5739... ??
 
 =======
 import java.io.IOException;
@@ -40,12 +54,15 @@ public class CameraActivity extends AppCompatActivity {
     @Override
 <<<<<<< HEAD
     protected void onCreate(Bundle savedInstanceState){
+<<<<<<< HEAD
 
 
 
 =======
     protected void onCreate(Bundle savedInstanceState) {
 >>>>>>> parent of 3677278... Android
+=======
+>>>>>>> parent of 0ba5739... ??
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 
