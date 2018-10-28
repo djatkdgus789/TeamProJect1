@@ -1,18 +1,17 @@
 package com.apress.gerber.teamproject1;
 
-import java.io.File;
-import android.net.Uri;
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.view.View;
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-
 import android.widget.ImageView;
+
+import java.io.File;
 
 
 public class CameraActivity extends Activity implements View.OnClickListener{
@@ -24,6 +23,9 @@ public class CameraActivity extends Activity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
         iv=(ImageView) findViewById(R.id.imgView);
