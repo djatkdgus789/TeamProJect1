@@ -45,7 +45,8 @@
         <activity
             android:name=".AlbumActivity"
             android:screenOrientation="portrait"></activity>
-
+        <activity
+            android:name=".Camera"></activity>
     </application>
 
 </manifest>
