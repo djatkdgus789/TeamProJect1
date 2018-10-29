@@ -3,11 +3,15 @@ package com.apress.gerber.teamproject1;
 import android.app.AlertDialog;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.view.View;
+import android.app.Activity;
+import android.content.Intent;
+
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.apress.gerber.teamproject1.Helper.GraphicOverlay;
 import com.apress.gerber.teamproject1.Helper.RectOverlay;
@@ -25,39 +29,26 @@ import com.wonderkiln.camerakit.CameraKitImage;
 import com.wonderkiln.camerakit.CameraKitVideo;
 import com.wonderkiln.camerakit.CameraView;
 
-import android.widget.Toast;
-
 import java.util.List;
 
 import dmax.dialog.SpotsDialog;
 
-public class CameraActivity extends AppCompatActivity {
+
+public class AlbumActivity extends Activity implements View.OnClickListener{
+
+    static int REQUEST_PHOTO_ALBUM=2;
+    static String SAMPLEIMG="ic_launcher.png";
 
     CameraView cameraView;
     GraphicOverlay graphicOverlay;
     Button btnDetect;
-
     AlertDialog waitingDialog;
 
-
     @Override
-    protected void onResume(){
-        super.onResume();
-        cameraView.start();
-    }
-
-    @Override
-    protected void onPause(){
-        super.onPause();
-        cameraView.stop();
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_camera);
+        setContentView(R.layout.activity_folder);
 
-        //Init view
         cameraView = (CameraView)findViewById(R.id.camera_view);
         graphicOverlay = (GraphicOverlay)findViewById(R.id.graphic_overlay);
         btnDetect = (Button)findViewById(R.id.btn_detect);
@@ -66,14 +57,13 @@ public class CameraActivity extends AppCompatActivity {
                 .setCancelable(false)
                 .build();
 
-
-        //event
         btnDetect.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                cameraView.start();
-                cameraView.captureImage();
-                graphicOverlay.clear();
+                Intent intent=new Intent(Intent.ACTION_PICK);
+                intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
+                intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent,REQUEST_PHOTO_ALBUM);
             }
         });
 
@@ -107,6 +97,14 @@ public class CameraActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+
+    public void onClick(View v){
+        Intent intent=new Intent(Intent.ACTION_PICK);
+        intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
+        intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(intent,REQUEST_PHOTO_ALBUM);
+    }
     public void runFaceDetector(Bitmap bitmap) {
         FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);
 
@@ -127,7 +125,7 @@ public class CameraActivity extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(CameraActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AlbumActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -146,4 +144,14 @@ public class CameraActivity extends AppCompatActivity {
 
 
     }
+
+/*    protected void onActivityResult(int requestCode,int resultCode,Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==RESULT_OK){
+            //iv.setImageURI(data.getData());
+
+        }
+
+    }
+*/
 }

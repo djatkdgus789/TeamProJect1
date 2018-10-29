@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,18 +8,12 @@
     tools:context=".MainActivity">
 
 
-    <Button
-        android:id="@+id/btn_detect"
-        android:text="얼굴인식"
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <com.wonderkiln.camerakit.CameraView
-        android:id="@+id/camera_view"
-        android:layout_above="@+id/btn_detect"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></com.wonderkiln.camerakit.CameraView>
+<Button
+    android:id="@+id/btn_detect"
+    android:text="사진선택"
+    android:layout_alignParentBottom="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
 
     <com.apress.gerber.teamproject1.Helper.GraphicOverlay
         android:id="@+id/graphic_overlay"
