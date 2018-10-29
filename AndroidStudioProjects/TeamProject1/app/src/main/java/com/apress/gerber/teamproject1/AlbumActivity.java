@@ -3,6 +3,7 @@ package com.apress.gerber.teamproject1;
 import android.app.AlertDialog;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
@@ -10,7 +11,7 @@ import android.view.View;
 import android.app.Activity;
 import android.content.Intent;
 
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.apress.gerber.teamproject1.Helper.GraphicOverlay;
@@ -22,13 +23,8 @@ import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.face.FirebaseVisionFace;
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceDetector;
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceDetectorOptions;
-import com.wonderkiln.camerakit.CameraKitError;
-import com.wonderkiln.camerakit.CameraKitEvent;
-import com.wonderkiln.camerakit.CameraKitEventListener;
-import com.wonderkiln.camerakit.CameraKitImage;
-import com.wonderkiln.camerakit.CameraKitVideo;
-import com.wonderkiln.camerakit.CameraView;
 
+import java.io.IOException;
 import java.util.List;
 
 import dmax.dialog.SpotsDialog;
@@ -38,73 +34,55 @@ public class AlbumActivity extends Activity implements View.OnClickListener{
 
     static int REQUEST_PHOTO_ALBUM=2;
     static String SAMPLEIMG="ic_launcher.png";
-
-    CameraView cameraView;
-    GraphicOverlay graphicOverlay;
-    Button btnDetect;
+    ImageView iv;
     AlertDialog waitingDialog;
+    GraphicOverlay graphicOverlay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_folder);
 
-        cameraView = (CameraView)findViewById(R.id.camera_view);
+
+        iv=(ImageView) findViewById(R.id.imgView);
         graphicOverlay = (GraphicOverlay)findViewById(R.id.graphic_overlay);
-        btnDetect = (Button)findViewById(R.id.btn_detect);
         waitingDialog = new SpotsDialog.Builder().setContext(this)
                 .setMessage("Please wait")
                 .setCancelable(false)
                 .build();
-
-        btnDetect.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(Intent.ACTION_PICK);
-                intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
-                intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(intent,REQUEST_PHOTO_ALBUM);
-            }
-        });
-
-        cameraView.addCameraKitListener(new CameraKitEventListener() {
-            @Override
-            public void onEvent(CameraKitEvent cameraKitEvent) {
-
-            }
-
-            @Override
-            public void onError(CameraKitError cameraKitError) {
-
-            }
-
-            @Override
-            public void onImage(CameraKitImage cameraKitImage) {
-                waitingDialog.show();
-
-                Bitmap bitmap = cameraKitImage.getBitmap();
-                bitmap = bitmap.createScaledBitmap(bitmap,cameraView.getWidth(),cameraView.getHeight(), false);
-                cameraView.stop();
-
-                runFaceDetector(bitmap);
-            }
-
-
-            @Override
-            public void onVideo(CameraKitVideo cameraKitVideo){
-
-            }
-        });
+        findViewById(R.id.btn_detect).setOnClickListener(this);
     }
 
     @Override
 
     public void onClick(View v){
+        graphicOverlay.clear();
         Intent intent=new Intent(Intent.ACTION_PICK);
         intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
         intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent,REQUEST_PHOTO_ALBUM);
     }
+
+    protected void onActivityResult(int requestCode,int resultCode,Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==RESULT_OK && requestCode == REQUEST_PHOTO_ALBUM && data != null && data.getData() != null){
+            waitingDialog.show();
+
+            Uri filePath = data.getData();
+
+            try {
+                waitingDialog.show();
+
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+                iv.setImageBitmap(bitmap);
+                bitmap = bitmap.createScaledBitmap(bitmap, iv.getWidth(),iv.getHeight(), false);
+                runFaceDetector(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public void runFaceDetector(Bitmap bitmap) {
         FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);
 
@@ -145,13 +123,4 @@ public class AlbumActivity extends Activity implements View.OnClickListener{
 
     }
 
-/*    protected void onActivityResult(int requestCode,int resultCode,Intent data){
-        super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode==RESULT_OK){
-            //iv.setImageURI(data.getData());
-
-        }
-
-    }
-*/
 }

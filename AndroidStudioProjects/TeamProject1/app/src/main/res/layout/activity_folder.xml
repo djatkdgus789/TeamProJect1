@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
 
 
 <Button
@@ -14,10 +13,16 @@
     android:layout_alignParentBottom="true"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />
+<ImageView
+    android:id="@+id/imgView"
+    android:layout_above="@+id/btn_detect"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:contentDescription="TODO" />
 
-    <com.apress.gerber.teamproject1.Helper.GraphicOverlay
-        android:id="@+id/graphic_overlay"
-        android:layout_above="@+id/btn_detect"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+<com.apress.gerber.teamproject1.Helper.GraphicOverlay
+    android:id="@+id/graphic_overlay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/btn_detect" />
 </RelativeLayout>
