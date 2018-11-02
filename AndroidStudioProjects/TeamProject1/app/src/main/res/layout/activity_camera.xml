@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,20 +10,32 @@
 
     <Button
         android:id="@+id/btn_detect"
-        android:text="얼굴인식"
+        android:layout_width="295dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_marginEnd="1dp"
+        android:layout_toStartOf="@+id/btn_upload"
+        android:text="얼굴인식" />
+
+    <Button
+        android:id="@+id/btn_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="업로드" />
 
     <com.wonderkiln.camerakit.CameraView
         android:id="@+id/camera_view"
-        android:layout_above="@+id/btn_detect"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></com.wonderkiln.camerakit.CameraView>
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_detect">
 
-    <com.apress.gerber.teamproject1.Helper.GraphicOverlay
+    </com.wonderkiln.camerakit.CameraView>
+
+    <com.Reference.teamproject1.Helper.GraphicOverlay
         android:id="@+id/graphic_overlay"
-        android:layout_above="@+id/btn_detect"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_detect" />
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.apress.gerber.teamproject1;
+package com.Reference.teamproject1;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -9,11 +9,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-
 public class MainActivity extends AppCompatActivity{
 
     static final int CAMERA_ACTIVITY_CODE=1;
     static final int ALBUM_ACTIVITY_CODE=2;
+    static final int NAVER_ACTIVITY_CODE=3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void Button1Click(View v){
-        Intent iButton1  = new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.naver.com"));
-        startActivity(iButton1);
+        Intent iButton1  = new Intent(this, Naver.class);
+        startActivityForResult(iButton1, NAVER_ACTIVITY_CODE);
     }
 
     public void Button2Click(View v){

@@ -1,4 +1,4 @@
-package com.apress.gerber.teamproject1;
+package com.apress.Reference.teamproject1;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

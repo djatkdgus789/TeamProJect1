@@ -9,4 +9,5 @@
     <string name="Exit">종료</string>
     <string name="todo">TODO</string>
     <string name="TakePhoto">사진찍기</string>
+    <string name="msg_loading">로딩중</string>
 </resources>

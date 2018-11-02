@@ -7,20 +7,32 @@ android:layout_height="match_parent"
 tools:context=".MainActivity">
 
 
-<Button
-    android:id="@+id/btn_detect"
-    android:text="사진선택"
-    android:layout_alignParentBottom="true"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
-<ImageView
+    <Button
+        android:id="@+id/btn_detect"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_toStartOf="@+id/btn_upload"
+        android:text="사진선택" />
+
+    <Button
+        android:id="@+id/btn_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="Button" />
+
+    <ImageView
     android:id="@+id/imgView"
     android:layout_above="@+id/btn_detect"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:contentDescription="TODO" />
 
-<com.apress.gerber.teamproject1.Helper.GraphicOverlay
+<com.Reference.teamproject1.Helper.GraphicOverlay
     android:id="@+id/graphic_overlay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
