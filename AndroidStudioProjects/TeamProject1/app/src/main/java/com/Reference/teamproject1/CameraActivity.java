@@ -3,6 +3,7 @@ package com.Reference.teamproject1;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -52,7 +53,7 @@ public class CameraActivity extends AppCompatActivity {
     Button btnDetect;
     Button btnUpload;
     AlertDialog waitingDialog;
-
+    static final int RESULT_ACTIVITY_CODE=4;
 
 
     private String postPath;
@@ -91,6 +92,8 @@ public class CameraActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 uploadFile();
+                Intent iResult = new Intent(CameraActivity.this, ResultActivity.class);
+                startActivityForResult(iResult, RESULT_ACTIVITY_CODE);
             }
         });
 
@@ -140,7 +143,7 @@ public class CameraActivity extends AppCompatActivity {
 
     private String saveBitmap(Bitmap bitmap, Context context) {
         File storage = context.getCacheDir(); // 이 부분이 임시파일 저장 경로
-        String fileName = "test.jpg";  // 파일이름은 마음대로!
+        String fileName = "test.jpeg";  // 파일이름은 마음대로!
         File tempFile = new File(storage,fileName);
         try{
             tempFile.createNewFile();  // 파일을 생성해주고
@@ -248,6 +251,7 @@ public class CameraActivity extends AppCompatActivity {
                             hidepDialog();
                             ServerResponse serverResponse = response.body();
                             Toast.makeText(getApplicationContext(), serverResponse.getMessage(), Toast.LENGTH_SHORT).show();
+
 
                         }
                     }else {

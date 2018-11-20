@@ -161,7 +161,7 @@ public class AlbumActivity extends Activity{
 
     private String saveBitmap(Bitmap bitmap, Context context) {
         File storage = context.getCacheDir(); // 이 부분이 임시파일 저장 경로
-        String fileName = "test.jpg";  // 파일이름은 마음대로!
+        String fileName = "test.jpeg";  // 파일이름은 마음대로!
         File tempFile = new File(storage,fileName);
         try{
             tempFile.createNewFile();  // 파일을 생성해주고
