@@ -27,20 +27,32 @@ public class ResultActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result);
         textView = (TextView) findViewById(R.id.textView);
-
-
-
         textView.setText(predict + "\n" + value);
+
+
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         mDatabase.child("facetype").addValueEventListener(new ValueEventListener(){
-
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 predict = dataSnapshot.getValue(String.class);
+                mDatabase.child("percent").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        value = dataSnapshot.getValue(String.class);
+                        textView.setText(predict +"\n" + value);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
             }
 
             @Override
@@ -48,18 +60,14 @@ public class ResultActivity extends Activity {
 
             }
         });
+    }
 
-        mDatabase.child("percent").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                value = dataSnapshot.getValue(String.class);
-            }
+    @Override
+    public void onBackPressed() {
+        predict="잠시만 기다려 주세요";
+        value="잠시만 기다려 주세요";
+        super.onBackPressed();
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
     }
 }
 
