@@ -2,55 +2,64 @@ package com.Reference.teamproject1;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.widget.TextView;
 
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.io.BufferedReader;
+
 
 public class ResultActivity extends Activity {
-
+    String csvUrl = "http://taeyeon.gonetis.com:8080/output/out.csv";
+    BufferedReader br = null;
     TextView textView;
+    static String predict="잠시만 기다려 주세요";
+    static String value="잠시만 기다려 주세요";
+    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("facetype");;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result);
-        textView = (TextView)findViewById(R.id.textView);
-        loadFile("http://taeyeon.gonetis.com:8080/output", "out.csv");
+        textView = (TextView) findViewById(R.id.textView);
 
+
+
+        textView.setText(predict + "\n" + value);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mDatabase.child("facetype").addValueEventListener(new ValueEventListener(){
 
-
-    public void loadFile(String Url, String FileName){
-        URL imageDownUrl;
-        int Read;
-        try {
-            imageDownUrl = new URL(Url);
-            HttpURLConnection conn= (HttpURLConnection)imageDownUrl.openConnection();
-            conn.connect();
-            int len = conn.getContentLength();
-            byte[] raster = new byte[len];
-            InputStream is = conn.getInputStream();
-            FileOutputStream fos = openFileOutput(FileName, MODE_WORLD_READABLE);
-            for (;;)
-            {
-                Read = is.read(raster);
-                if (Read <= 0)
-                {
-                    break;
-                }
-                fos.write(raster,0, Read);
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                predict = dataSnapshot.getValue(String.class);
             }
-            is.close();
-            fos.close();
-        } catch (Exception e) {
-            System.out.println("error");
-            return;
-        }
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        mDatabase.child("percent").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                value = dataSnapshot.getValue(String.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
-
 }
+

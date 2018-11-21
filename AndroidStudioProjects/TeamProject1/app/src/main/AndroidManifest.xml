@@ -49,6 +49,9 @@
         <activity
             android:name="com.Reference.teamproject1.Naver"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.Reference.teamproject1.ResultActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -54,6 +54,7 @@ public class AlbumActivity extends Activity{
     GraphicOverlay graphicOverlay;
     Button btnDetect;
     Button btnUpload;
+    static final int RESULT_ACTIVITY_CODE=4;
 
 
     private String postPath;
@@ -90,6 +91,8 @@ public class AlbumActivity extends Activity{
             @Override
             public void onClick(View view){
                 uploadFile();
+                Intent iResult = new Intent(AlbumActivity.this, ResultActivity.class);
+                startActivityForResult(iResult, RESULT_ACTIVITY_CODE);
             }
         });
     }

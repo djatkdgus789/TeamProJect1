@@ -23,7 +23,7 @@ tools:context=".MainActivity">
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:text="Button" />
+        android:text="업로드" />
 
     <ImageView
     android:id="@+id/imgView"

@@ -1,35 +1,43 @@
 {
   "project_info": {
-    "project_number": "9160901558",
-    "firebase_url": "https://sample-3e1d2.firebaseio.com",
-    "project_id": "sample-3e1d2",
-    "storage_bucket": "sample-3e1d2.appspot.com"
+    "project_number": "784675154021",
+    "firebase_url": "https://test-a3da0.firebaseio.com",
+    "project_id": "test-a3da0",
+    "storage_bucket": "test-a3da0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:9160901558:android:88a4944ac7fe849b",
+        "mobilesdk_app_id": "1:784675154021:android:d95f6448d1712dbd",
         "android_client_info": {
-          "package_name": "com.apress.gerber.teamproject1"
+          "package_name": "com.Reference.teamproject1"
         }
       },
       "oauth_client": [
         {
-          "client_id": "9160901558-n5861269l3ptsbsfd7ccnuikmnocf43t.apps.googleusercontent.com",
+          "client_id": "784675154021-j8i0huif9u8uovhm20fggjootnj9lc23.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.apress.gerber.teamproject1",
-            "certificate_hash": "46cb7207e8f8bd39745c5849dcfaaf28d2c5fab8"
+            "package_name": "com.Reference.teamproject1",
+            "certificate_hash": "3fa707b27e663736507d77e3de2daf52d4e301d9"
           }
         },
         {
-          "client_id": "9160901558-jkrlr4ktpfluq8s28r5iq8j58qepbi7e.apps.googleusercontent.com",
+          "client_id": "784675154021-bqafre63rdvg6mn91ua26a659gna1st7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Reference.teamproject1",
+            "certificate_hash": "d98cf4445264b420d251966e93a35d333bccca87"
+          }
+        },
+        {
+          "client_id": "784675154021-8tf2f8bmm1eo9q4pphon4t7jqa7b0s4s.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBHl4SByD3mxSko81frtTtsHJrv77JDcA8"
+          "current_key": "AIzaSyBjmCAo9o2G7H7HGnJ3YPFVq2itgJ5sbio"
         }
       ],
       "services": {
@@ -40,7 +48,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "9160901558-jkrlr4ktpfluq8s28r5iq8j58qepbi7e.apps.googleusercontent.com",
+              "client_id": "784675154021-8tf2f8bmm1eo9q4pphon4t7jqa7b0s4s.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
