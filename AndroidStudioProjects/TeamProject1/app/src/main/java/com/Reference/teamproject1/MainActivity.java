@@ -53,12 +53,12 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void Button1Click(View v){
-        Intent iButton1  = new Intent(this, Naver.class);
-        startActivityForResult(iButton1, NAVER_ACTIVITY_CODE);
+        Intent iButton1  = new Intent(Intent.ACTION_VIEW, Uri.parse("http://boyshair.cafe24.com/?NaPm=ct%3Djoub6bky%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3D%7Chk%3Dff6cd463585eb655ecd066c4a8317fa1423772ae"));
+        startActivity(iButton1);
     }
 
     public void Button2Click(View v){
-        Intent iButton2  = new Intent(Intent.ACTION_VIEW, Uri.parse("http://google.com"));
+        Intent iButton2  = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UCkOWueVolZTPOMaa5ZIYrxw"));
         startActivity(iButton2);
     }
 }
