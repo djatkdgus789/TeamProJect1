@@ -1,8 +1,11 @@
 package com.Reference.teamproject1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -20,17 +23,36 @@ public class ResultActivity extends Activity {
     TextView textView;
     static String predict="잠시만 기다려 주세요";
     static String value="잠시만 기다려 주세요";
+    private Button button;
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("facetype");;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.result);
+        if(predict == "0"){
+            setContentView(R.layout.heart_result);
+        }else if(predict == "1"){
+            setContentView(R.layout.oblong_result);
+        }else if(predict == "2"){
+            setContentView(R.layout.oval_result);
+        }else if(predict == "3"){
+            setContentView(R.layout.round_result);
+        }else if(predict == "4"){
+            setContentView(R.layout.square_result);
+        }
         textView = (TextView) findViewById(R.id.textView);
-        textView.setText(predict + "\n" + value);
+        button = (Button)findViewById(R.id.button3);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openRecommandListActivity();
+            }
+        });
+    }
 
-
-
+    public void openRecommandListActivity(){
+        Intent intent = new Intent(this, RecommandListActivity.class);
+        startActivity(intent);
     }
 
     @Override

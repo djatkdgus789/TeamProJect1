@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="app_name">남자는 머리빨</string>
+    <string name="app_name">HairStyles Math Man</string>
     <string name="action_settings">Settings</string>
     <string name="camera">Camera</string>
     <string name="button1">Button1</string>
@@ -10,17 +11,42 @@
     <string name="todo">TODO</string>
     <string name="TakePhoto">사진찍기</string>
     <string name="msg_loading">로딩중</string>
+    <string name="button3">next</string>
 
-    <string name="facetype_ipsum">타원형(aka 원빈) : 이상적인 비율과 균형잡힌 남자 얼굴형으로 헤어 스타일의 선택폭이 넓다. 일반적으로 어떤 헤어스타일도 잘 어울리며, 자유롭게 원하는 헤어스타일을 실험해 보는 것을 추천한다.퀴프헤어나 언더컷도 무난히 어울릴 얼굴형
-    주의) 길이가 긴 스트레이트, 귀를 덮고 눈까지 오는 앞머리 의 프린지 헤어는 비교적 얼굴을 둥글게 보이게 하므로 피할 것.
-    각진 얼굴형(aka 이병헌) : 턱이 발달한 얼굴형으로  최대한 부드러운 이미지를 표현하는 것이 포인트이다. 적당히 부드러운 느낌의 모류와 윗머리 전체에 볼륨을 줘 강한 인상을 피할 수 있다. 측면의 머리는 단정하나 너무 날카롭지 않게 부드럽게 처리하고 결을 살린 앞머리는 프린지 스타일로 처리하면 좋다.(프린즈 = 댄디컷)
-    긴얼굴형(하관발달형 aka 김우빈) : 언더컷이나 투블럭의 경우,
-    측면의 짧은 머리를 보완하기 위해 윗머리에 길이감을 더하는 경우가 있는데 자칫 얼굴이 더 길어보일 수 있다.
-    윗머리를 길지 않게, 측면은 짧지 않게 잘라 상대적으로 긴 얼굴형태에 균형을 유지한다.
-    프린지 헤어의 경우 가벼운 볼륨감과 함께 이마를 살짝 덮는 정도가 적당하겠다.
-    둥근 얼굴형 ( aka 송중기) : 둥근얼굴은 일반적으로 눈에 띄는 턱라인이나 특징이 부족하다. 그러므로 선명하고 굵은 머릿결과 볼륨을 추가할 필요가 있겠음. 최대한 측면은 가볍게 처리하고 적당히 이마를 드러내는게 좋을 것. 샤프한 이미지를 위해 모류의 끝을 날카롭게 처리하는 것도 좋지만 너무 뾰족하게 만드는 것은 피하도록 하자.
-    비교적 전체적으로 길이가 긴 네추럴 프린지 스타일은 피하는게 좋겠다.
-    역삼각형(aka 현빈) : 눈에 띄는 광대뼈와 좁아지는 하관, 이마는 폭이 좁은게 특징. 자칫 날카롭게 보일수 있기 때문에 부드러운 실루엣과 풍성한 볼륨이 필수라 할 수 있다. 윗머리는 풍성한 볼륨을, 측면은 너무 짧지 않게, 적당한 길이감을 유지해 날카로움을 피하자. 측면의 머리를 길러 덮기보다는 옆모습을 드러내고 대신 앞머리를 길게해 폭이 좁은 이마를 가리는 편이 낫다.</string>
+    <string name="Heart">하트형</string>
+    <string name="Oblong">직사각형</string>
+    <string name="Oval">타원형</string>
+    <string name="Round">둥근형</string>
+    <string name="Square">사각형</string>
+
+    <string name="Dandy">댄디컷</string>
+    <string name="Regent">리젠트컷</string>
+    <string name="PartPerm">가르마펌</string>
+    <string name="Swat">스왓컷</string>
+    <string name="BabyPerm">베이비펌</string>
+    <string name="AsPerm">애즈펌</string>
+    <string name="Comma">쉼표머리</string>
+    <string name="Moheekan">모히칸 컷</string>
+    <string name="NatualPerm">네츄럴펌</string>
+    <string name="Pomade">포마드</string>
+    <string name="VolumPerm">볼륨펌</string>
+    <string name="SoftPerm">소프트</string>
+    <string name="Short_regent">소프트리젠트컷</string>
+
+    <string name="HowToDandy">뜨는 머리일 경우: 옆을 12mm정도. 뒷머리는 상고식으로 해야 차분해짐.</string>
+
+    <string name="HeartType_ipsum">눈에 띄는 광대뼈와 좁아지는 하관, 이마는 폭이 좁은게 특징. 자칫 날카롭게 보일수 있기 때문에 부드러운 실루엣과 풍성한 볼륨이 필수라 할 수 있다. 윗머리는 풍성한 볼륨을, 측면은 너무 짧지 않게, 적당한 길이감을 유지해 날카로움을 피하자. 측면의 머리를 길러 덮기보다는 옆모습을 드러내고 대신 앞머리를 길게해 폭이 좁은 이마를 가리는 편이 낫다.
+</string>
+    <string name="OblongType_ipsum">언더컷이나 투블럭의 경우,측면의 짧은 머리를 보완하기 위해 윗머리에 길이감을 더하는 경우가 있는데 자칫 얼굴이 더 길어보일 수 있다. 윗머리를 길지 않게, 측면은 짧지 않게 잘라 상대적으로 긴 얼굴형태에 균형을 유지한다. 프린지 헤어의 경우 가벼운 볼륨감과 함께 이마를 살짝 덮는 정도가 적당하겠다.
+    </string>
+    <string name="OvalType_ipsum">이상적인 비율과 균형잡힌 남자 얼굴형으로 헤어 스타일의 선택폭이 넓다. 일반적으로 어떤 헤어스타일도 잘 어울리며, 자유롭게 원하는 헤어스타일을 실험해 보는 것을 추천한다.
+퀴프헤어나 언더컷도 무난히 어울릴 얼굴형
+주의) 길이가 긴 스트레이트, 귀를 덮고 눈까지 오는 앞머리 의 프린지 헤어는 비교적 얼굴을 둥글게 보이게 하므로 피할 것.
+    </string>
+    <string name="RoundType_ipsum">둥근얼굴은 일반적으로 눈에 띄는 턱라인이나 특징이 부족하다. 그러므로 선명하고 굵은 머릿결과 볼륨을 추가할 필요가 있다.  최대한 측면은 가볍게 하고 이마를 어느정도 드러내는 것이 좋다.  비교적 전체적으로 길이가 긴 natual 댄디 스타일은 피하는게 좋다.
+    </string>
+    <string name="SquareType_ipsum"> 턱이 발달한 얼굴형으로  최대한 부드러운 이미지를 표현하는 것이 포인트이다. 적당히 부드러운 느낌의 모류와 윗머리 전체에 볼륨을 줘 강한 인상을 피할 수 있다. 측면의 머리는 단정하나 너무 날카롭지 않게 부드럽게 처리하고 결을 살린 앞머리는 댄디 스타일로 처리하면 좋다.
+    </string>
     <string name="checkin">Checkin</string>
 
     <string name="menu_night_mode">Night mode</string>

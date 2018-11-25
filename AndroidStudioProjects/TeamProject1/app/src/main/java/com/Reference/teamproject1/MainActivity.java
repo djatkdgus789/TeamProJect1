@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity{
 
     static final int CAMERA_ACTIVITY_CODE=1;
     static final int ALBUM_ACTIVITY_CODE=2;
-    static final int NAVER_ACTIVITY_CODE=3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

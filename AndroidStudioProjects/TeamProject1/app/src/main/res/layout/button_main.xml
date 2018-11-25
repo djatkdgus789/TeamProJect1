@@ -57,7 +57,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal">
 
-        <Button
+        <ImageButton
             android:id="@+id/button1"
             style="@style/Widget.AppCompat.Button"
             android:layout_height="150dp"
@@ -72,7 +72,7 @@
             tools:layout_editor_absoluteX="205dp"
             tools:layout_editor_absoluteY="48dp" />
 
-        <Button
+        <ImageButton
             android:id="@+id/button2"
             style="@style/Widget.AppCompat.Button"
             android:layout_height="150dp"
