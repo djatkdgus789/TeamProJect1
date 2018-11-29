@@ -42,7 +42,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation 'com.google.firebase:firebase-database:16.0.1'
-    implementation files('lib/opencsv-4.3.2.jar')
 }
 
 apply plugin: 'com.google.gms.google-services'

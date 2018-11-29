@@ -18,9 +18,10 @@ public class ResultActivity extends Activity {
     String csvUrl = "http://taeyeon.gonetis.com:8080/output/out.csv";
     BufferedReader br = null;
     TextView textView;
-    static String predict="잠시만 기다려 주세요";
-    static String value="잠시만 기다려 주세요";
-    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("facetype");;
+    static String predict;
+    static String value;
+    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("facetype");
+    ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,21 +31,24 @@ public class ResultActivity extends Activity {
         textView.setText(predict + "\n" + value);
 
 
-
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        mDatabase.child("facetype").addValueEventListener(new ValueEventListener(){
+        mDatabase.child("facetype").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 predict = dataSnapshot.getValue(String.class);
                 mDatabase.child("percent").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        predict = "잠시만 기다려 주세요";
+                        value = "잠시만 기다려 주세요";
+                        textView.setText(predict + "\n" + value);
                         value = dataSnapshot.getValue(String.class);
-                        textView.setText(predict +"\n" + value);
+                        textView.setText(predict + "\n" + value);
+
                     }
 
                     @Override
@@ -60,14 +64,6 @@ public class ResultActivity extends Activity {
 
             }
         });
-    }
-
-    @Override
-    public void onBackPressed() {
-        predict="잠시만 기다려 주세요";
-        value="잠시만 기다려 주세요";
-        super.onBackPressed();
-
     }
 }
 
