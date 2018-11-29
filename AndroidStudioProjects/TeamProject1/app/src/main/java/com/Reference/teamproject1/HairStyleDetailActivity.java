@@ -24,8 +24,6 @@ public class HairStyleDetailActivity extends AppCompatActivity{
         final String HairStyleName = intent.getStringExtra(EXTRA_NAME);
 
         final Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         CollapsingToolbarLayout collapsingToolbar = findViewById(R.id.collapsing_toolbar);
         collapsingToolbar.setTitle(HairStyleName);

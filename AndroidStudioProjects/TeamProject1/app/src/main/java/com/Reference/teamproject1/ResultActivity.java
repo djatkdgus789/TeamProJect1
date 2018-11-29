@@ -3,7 +3,6 @@ package com.Reference.teamproject1;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -31,26 +30,11 @@ public class ResultActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(predict == "0"){
-            setContentView(R.layout.heart_result);
-        }else if(predict == "1"){
-            setContentView(R.layout.oblong_result);
-        }else if(predict == "2"){
-            setContentView(R.layout.oval_result);
-        }else if(predict == "3"){
-            setContentView(R.layout.round_result);
-        }else if(predict == "4"){
-            setContentView(R.layout.square_result);
-        }
         textView = (TextView) findViewById(R.id.textView);
 
-        button = (Button)findViewById(R.id.button3);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openRecommandListActivity();
-            }
-        });
+        setContentView(R.layout.result);
+
+
     }
 
     public void openRecommandListActivity(){
@@ -65,20 +49,24 @@ public class ResultActivity extends Activity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 predict = dataSnapshot.getValue(String.class);
-                mDatabase.child("percent").addValueEventListener(new ValueEventListener() {
+                value = dataSnapshot.getValue(String.class);
+                if(predict.equals("heart")){
+                    setContentView(R.layout.heart_result);
+                }else if(predict.equals("oblong")){
+                    setContentView(R.layout.oblong_result);
+                }else if(predict.equals("oval")){
+                    setContentView(R.layout.oval_result);
+                }else if(predict.equals("round")){
+                    setContentView(R.layout.round_result);
+                }else if(predict.equals("square")){
+                    setContentView(R.layout.square_result);
+                }
+
+                button = (Button)findViewById(R.id.button3);
+                button.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        predict = "잠시만 기다려 주세요";
-                        value = "잠시만 기다려 주세요";
-                        textView.setText(predict + "\n" + value);
-                        value = dataSnapshot.getValue(String.class);
-                        textView.setText(predict + "\n" + value);
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                    public void onClick(View v) {
+                        openRecommandListActivity();
                     }
                 });
 

@@ -47,6 +47,15 @@
         <activity
             android:name="com.Reference.teamproject1.ResultActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.Reference.teamproject1.RecommandListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.Reference.teamproject1.HairStyleDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.Reference.teamproject1.HairStyleListFragment"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -17,6 +17,6 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="TextView"/>
+            android:text="잠시만 기다려 주세요"/>
     </LinearLayout>
 </RelativeLayout>
