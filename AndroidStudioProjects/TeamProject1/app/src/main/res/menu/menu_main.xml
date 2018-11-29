@@ -12,4 +12,4 @@
         android:orderInCategory="100"
         android:title="@string/Exit"
         app:showAsAction="never" />
-    </menu>
+</menu>
